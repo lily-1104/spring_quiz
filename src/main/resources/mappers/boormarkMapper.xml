@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.quiz.lesson06.Mapper.BookmarkMapper">
+
+
+	<!-- 즐겨찾기 추가 -->
+	<insert id="insertBookmark" parameterType="map">
+		
+		INSERT INTO	`bookmark`
+		(
+			`id`
+			, `title`
+			, `domain`
+			, `createdAt`
+			, `updatedAt`
+		)
+		
+		VALUES
+		(
+			#{id}
+			, #{title}
+			, #{domain}
+			, NOW()
+			, NOW()
+		)
+	
+	</insert>
+	
+	
+	
+	<!-- 1-2. 결과 페이지 이동  -->
+	<select id="selectBookmarkList" resultType="com.quiz.lesson06.domain.Bookmark">
+	
+		SELECT
+			`id`
+			, `title`
+			, `domain`
+			, `createdAt`
+			, `updatedAt`
+		
+		FROM
+			`bookmark`
+	
+	</select>
+
+
+</mapper>
