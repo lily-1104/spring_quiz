@@ -38,7 +38,7 @@ public class Lesson06Controller {
 	// 즐겨찾기 추가 - AJAX가 하는 요청
 	@PostMapping("/quiz01/add-bookmark")
 	@ResponseBody
-	public map<String, Object> addBookmark(		// map<String, Object> : json으로 내리기위해서 사용
+	public Map<String, Object> addBookmark(		// map<String, Object> : json으로 내리기위해서 사용
 			@RequestParam("title") String title,
 			@RequestParam("domain") String domain) {
 		
@@ -74,7 +74,6 @@ public class Lesson06Controller {
 		return "lesson06/bookmarkList";
 		
 	}
-	
 	
 
 }
