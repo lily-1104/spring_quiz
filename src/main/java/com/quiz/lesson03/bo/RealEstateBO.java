@@ -27,12 +27,12 @@ public class RealEstateBO {
 	
 	// 1-2. 월세 조건 select
 	// input : rentPrice / output : List<RealEstate>
-//	public List<RealEstate> getRealEstateListByRentPrice(int rent) {
-//		
-//		// return null;
-//		return realEstateMapper.selectRealEstateListByRentPrice(rentPrice);
-//		
-//	}
+	public List<RealEstate> getRealEstateListByRentPrice(int rentPrice) {
+		
+		// return null;
+		return realEstateMapper.selectRealEstateListByRentPrice(rentPrice);
+		
+	}
 	
 	
 	

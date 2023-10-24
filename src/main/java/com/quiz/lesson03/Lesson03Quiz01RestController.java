@@ -32,25 +32,26 @@ public class Lesson03Quiz01RestController {
 	
 	// 1-2. 월세 조건 select
 	// URL : http://localhost:8080/lesson03/quiz01/2?rent_price=90
-//	@RequestMapping("/2")
-//	public List<RealEstate> quiz01_2(
-//			@RequestParam("rent_price") int rentprice) {
-//		
-//		return  realEstateBO.getRealEstateListByRentPrice(rentPrice);
-//		
-//	}
+	@RequestMapping("/2")
+	public List<RealEstate> quiz01_2(
+			@RequestParam("rent_price") int rentPrice) {
+		
+		return  realEstateBO.getRealEstateListByRentPrice(rentPrice);
+		
+	}
 	
 	
 	
 	// 1-3. 복합조건 select
 	// URL : http://localhost:8080/lesson03/quiz01/3?area=90&price=130000
-//	@RequestMapping("/3")
-//	public List<RealEstate> quiz01_3(
-//			@RequestParam(value="area") int area,
-//			@RequestParam("price") int price) {
-//		
-//		return realEstateBO.getRealEstateListByRentPrice(area, price)		// response body에 JSON으로 내려감
-//				
-//	}
+	@RequestMapping("/3")
+	public List<RealEstate> quiz01_3(
+			@RequestParam(value="area") int area,
+			@RequestParam("price") int price) {
+		
+		return realEstateBO.getRealEstateListByAreaPrice(area, price);		// response body에 JSON으로 내려감
+				
+	}
+	
 	
 }

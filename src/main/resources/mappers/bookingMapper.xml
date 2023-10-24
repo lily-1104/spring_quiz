@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.quiz.booking.mapper.BookingMapper">
+ 
+ 
+ 	<!-- 예약 목록 보기 화면 -->
+ 	<select id="selectBookingList" resultType="com.quiz.booking.domain.Booking">
+ 	
+ 		SELECT
+ 			`id`
+			, `name`
+			, `headcount`
+			, `day`
+			, `date`
+			, `phoneNumber`
+			, `state`
+			, `createdAt`
+			, `updatedAt`
+		
+		FROM
+			`booking`
+ 	
+ 	</select>
+ 	
+ 	
+ 	
+ 	<!-- 예약 삭제 기능 -->
+ 	<delete id="deleteBookingById" parameterType="int">
+ 	
+ 		DELETE 
+ 		FROM
+ 			`booking`
+ 		
+ 		WHERE
+ 			`id` = #{id}
+ 	
+ 	</delete>
+ 	
+ 	
+ 	
+ 	<!-- 예약 추가 -->
+ 	<insert id="insertBooking" parameterType="map">
+ 	
+ 		INSERT INTO `booking`
+ 		(
+ 			`name`
+			, `headcount`
+			, `day`
+			, `date`
+			, `phoneNumber`
+			, `state`
+			, `createdAt`
+			, `updatedAt`
+ 		)
+ 		
+ 		VALUES
+ 		(
+ 			#{name}
+ 			, #{headcount}
+ 			, #{day}
+ 			, #{date}
+ 			, #{phoneNumber}
+ 			, '대기중'	<!-- 예약 상태는 대기중으로 먼저 넘어가야해서 DB에 아예 대기중으로 넘김 -->
+ 			, NOW()
+ 			, NOW()
+ 		)
+ 	
+ 	</insert>
+ 	
+ 	
+ 	
+ 	<!-- 예약 확인 화면 -->
+ 	<select id="selectBookingCheck" resultType="com.quiz.booking.domain.Booking">
+ 		
+ 		SELECT
+ 			`id`
+			, `name`
+			, `headcount`
+			, `day`
+			, `date`
+			, `phoneNumber`
+			, `state`
+			, `createdAt`
+			, `updatedAt`
+		
+		FROM
+			`booking`
+ 	
+ 	</select>
+ 	
+ 	
+ 	
+ 	<!-- 예약 조회 기능 -->
+ 	<select id="selectBookingByNamePhoneNumber" parameterType="map" resultType="com.quiz.booking.domain.Booking">
+ 	
+ 		SELECT
+ 			`id`
+			, `name`
+			, `headcount`
+			, `day`
+			, `date`
+			, `phoneNumber`
+			, `state`
+			, `createdAt`
+			, `updatedAt`
+		
+		FROM
+			`booking`
+			
+		WHERE
+			`name` = #{name}
+			AND `phoneNumber` = #{phoneNumber}
+ 	
+ 	</select>
+ 	
+ 	
+ 
+ </mapper>

@@ -35,7 +35,7 @@
 				<tr>
 					<td>${bookmark.id }</td>
 					<td>${bookmark.title }</td>
-					<td><a href="${bookmark.domain }" target="_blank">${bookmark.url }</a></td>
+					<td><a href="${bookmark.domain }" target="_blank">${bookmark.domain }</a></td>
 						<%-- 앵커(a) 태그로 링크 클릭 가능, target="_blank"은 새 탭에서 띄우도록 --%>
 				</tr>
 				</c:forEach>

@@ -72,15 +72,15 @@
 							<c:when test="${member.grade eq 'VIP' }">	<%-- VIP는 스트링이라서 따옴표로 감싸야함, 밖에 큰따옴표가 있어서 VIP에는 작은 따옴표 사용 --%>
 								<span class="text-danger">${member.grade }</span>
 							</c:when>
-							<%-- 
-							<c:when test="${member.grade \"GOLD\" }">
+							
+							<c:when test="${member.grade eq 'GOLD' }">
 								<span class="text-warning">${member.grade }</span>
 							</c:when>
 							
 							<c:otherwise>
 								${member.grade }
 							</c:otherwise>
-							--%>
+							
 						</c:choose>
 					</td>
 					

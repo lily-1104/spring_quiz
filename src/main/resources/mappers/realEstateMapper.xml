@@ -18,8 +18,8 @@
  			, `type`
  			, `price`
  			, `rentPrice`
- 			, `createAt`
- 			, `updateAt`
+ 			, `createdAt`
+ 			, `updatedAt`
  		
  		FROM
  			`real_estate`
@@ -43,8 +43,8 @@
  			, `type`
  			, `price`
  			, `rentPrice`
- 			, `createAt`
- 			, `updateAt`
+ 			, `createdAt`
+ 			, `updatedAt`
  		
  		FROM
  			`real_estate`
@@ -69,8 +69,8 @@
  			, `type`
  			, `price`
  			, `rentPrice`
- 			, `createAt`
- 			, `updateAt`
+ 			, `createdAt`
+ 			, `updatedAt`
  		
  		FROM
  			`real_estate`
